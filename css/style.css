@@ -183,6 +183,9 @@ footer span {
 }
 
 @media (max-width: 500px) {
-  nav { flex-direction: column; gap: 0.5rem; }
-  .nav-links { flex-wrap: wrap; justify-content: center; }
+  nav { flex-wrap: wrap; gap: 0.4rem; padding: 0.6rem 1rem; }
+  .nav-logo { font-size: 1.2rem; width: 100%; text-align: center; }
+  .nav-links { gap: 0.5rem; flex-wrap: wrap; justify-content: center; width: 100%; }
+  .nav-links a { font-size: 0.78rem; }
+  .btn { padding: 0.65rem 1.4rem; font-size: 0.9rem; }
 }

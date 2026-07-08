@@ -571,7 +571,16 @@
 
 @media (max-width: 600px) {
   .form-row { grid-template-columns: 1fr; }
-  .form-card { padding: 1.5rem; }
+  .form-card { padding: 1.25rem; }
   .radio-group { flex-direction: column; }
   .radio-card { min-width: unset; }
+  .rsvp-main { padding: 0 1rem; margin: 1.5rem auto; }
+  .rsvp-header { padding: 2.5rem 1rem 2rem; }
+  .event-pill { font-size: 0.72rem; padding: 0.4rem 0.8rem; letter-spacing: 0; }
+  .guest-name-row { grid-template-columns: 1fr; }
+  .guest-contact-row { grid-template-columns: 1fr; }
+  .tshirt-section { padding: 1.25rem; }
+  .rsvp-sidebar { grid-template-columns: 1fr; }
+  .submit-btn { max-width: 100%; }
+  .number-input-wrap { width: 100%; justify-content: center; }
 }
