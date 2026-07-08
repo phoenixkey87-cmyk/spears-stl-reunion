@@ -277,5 +277,29 @@
 
   .details-main {
     padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .contacts-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .details-header {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .event-pill {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .block-content h2 {
+    font-size: 1.25rem;
   }
 }

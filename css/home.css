@@ -300,6 +300,13 @@
 @media (max-width: 600px) {
   .details-grid { grid-template-columns: 1fr; }
   .experience-grid { grid-template-columns: 1fr; }
-  .countdown-box { min-width: 80px; padding: 1rem 1.2rem; }
-  .countdown-box span { font-size: 2.2rem; }
+  .countdown-box { min-width: 70px; padding: 0.85rem 1rem; }
+  .countdown-box span { font-size: 1.9rem; }
+  .countdown-grid { gap: 0.75rem; }
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; max-width: 280px; text-align: center; }
+  .quote-banner { font-size: 0.95rem; padding: 1.25rem 1rem; }
+  .activity-badge { font-size: 0.95rem; padding: 0.5rem 1.2rem; }
+  .experience-section { padding: 2.5rem 1rem; }
+  .countdown-section { padding: 2.5rem 1rem; }
 }
