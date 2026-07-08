@@ -5,13 +5,13 @@
 /* ---- HERO ---- */
 /*
   TO USE YOUR OWN PHOTO:
-  1. Add your image file to this project folder (e.g. images/family.jpg)
+  1. Save your image into the "images" folder in this project (e.g. images/family.jpg)
   2. Replace the URL below with: url('../images/family.jpg')
 */
 .hero {
   position: relative;
   min-height: 92vh;
-  background: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1400&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
