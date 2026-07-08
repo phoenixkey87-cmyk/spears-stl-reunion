@@ -209,6 +209,54 @@
   max-width: 480px;
 }
 
+/* ---- CONTACT CARDS ---- */
+.contacts-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 160px;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+
+.contact-card:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.contact-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.contact-phone {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+.contact-phone:hover {
+  color: var(--yellow);
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 600px) {
   .detail-block {
