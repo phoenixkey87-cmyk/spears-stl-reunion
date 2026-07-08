@@ -1,0 +1,577 @@
+/* =============================================
+   SPEARS STL - RSVP Page Styles
+   ============================================= */
+
+/* ---- PAGE HEADER ---- */
+.rsvp-header {
+  background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 60%, var(--teal) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+}
+
+.header-eyebrow {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: var(--yellow);
+  margin-bottom: 0.25rem;
+}
+
+.header-title {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: var(--white);
+  text-shadow: 0 3px 12px rgba(0,0,0,0.3);
+  margin-bottom: 0.75rem;
+}
+
+.header-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.event-pill {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(4px);
+}
+
+/* ---- SUCCESS BANNER ---- */
+.success-banner {
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  padding: 1.25rem 2rem;
+}
+
+.success-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--white);
+}
+
+.success-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.success-inner strong {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.success-inner a {
+  color: var(--yellow);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---- MAIN LAYOUT ---- */
+.rsvp-main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+/* ---- FORM CARD ---- */
+.form-card {
+  padding: 2.5rem;
+}
+
+.form-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  color: var(--purple);
+  margin-bottom: 0.4rem;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 2rem;
+}
+
+.required-star {
+  color: var(--red);
+  font-weight: 800;
+}
+
+/* ---- FORM ELEMENTS ---- */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.7rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--dark);
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+  background: var(--white);
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: var(--red);
+}
+
+.field-error {
+  color: var(--red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+}
+
+/* ---- RADIO CARDS ---- */
+.radio-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.radio-card {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background 0.2s;
+  background: #fafafa;
+}
+
+.radio-card input[type="radio"] {
+  accent-color: var(--blue);
+  width: 16px;
+  height: 16px;
+}
+
+.radio-card:has(input:checked) {
+  border-color: var(--blue);
+  background: rgba(67, 97, 238, 0.08);
+}
+
+.radio-icon { font-size: 1.2rem; }
+
+/* ---- NUMBER INPUT ---- */
+.number-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.num-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: var(--dark);
+  color: var(--white);
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.num-btn:hover { background: var(--purple); }
+
+.number-input-wrap input {
+  width: 60px;
+  text-align: center;
+  border: none !important;
+  border-radius: 0 !important;
+  border-left: 2px solid #e0e0e0 !important;
+  border-right: 2px solid #e0e0e0 !important;
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: var(--white) !important;
+  padding: 0.5rem !important;
+}
+
+/* ---- T-SHIRT SECTION ---- */
+.tshirt-section {
+  background: linear-gradient(135deg, #f8f0ff, #eff6ff);
+  border: 2px solid rgba(123, 45, 139, 0.2);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tshirt-heading {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tshirt-badge {
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.tshirt-note {
+  font-size: 0.88rem;
+  color: #666;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- GUEST ROWS (name + shirt size per person) ---- */
+.guest-row {
+  background: var(--white);
+  border: 1px solid rgba(123,45,139,0.15);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  transition: box-shadow 0.2s;
+}
+
+.guest-row:hover {
+  box-shadow: 0 2px 12px rgba(123,45,139,0.12);
+}
+
+.guest-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.guest-number-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guest-row-header .you-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teal);
+  background: rgba(0,150,199,0.1);
+  padding: 0.15rem 0.6rem;
+  border-radius: 50px;
+}
+
+.guest-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.guest-name-row .form-group {
+  margin-bottom: 0;
+}
+
+.guest-name-row input {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+/* Contact row inside guest card (email + phone) */
+.guest-contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.guest-contact-row .form-group {
+  margin-bottom: 0;
+}
+
+.guest-contact-row input {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+/* Read-only mirror of Person 1 fields */
+.guest-row input[readonly] {
+  background: #f3f0ff !important;
+  color: #555;
+  cursor: default;
+}
+
+.tshirt-label {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.tshirt-sizes {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.size-btn {
+  padding: 0.35rem 0.7rem;
+  border: 2px solid #d0c0e0;
+  border-radius: 8px;
+  background: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--dark);
+}
+
+.size-btn:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.size-btn.selected {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: var(--white);
+  box-shadow: 0 2px 8px rgba(123,45,139,0.3);
+}
+
+/* ---- SIZE GUIDE ---- */
+.size-guide {
+  margin-top: 1rem;
+}
+
+.size-guide-toggle {
+  background: none;
+  border: 1px dashed var(--purple);
+  color: var(--purple);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.size-guide-toggle:hover {
+  background: rgba(123,45,139,0.08);
+}
+
+.size-guide-table {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.size-guide-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.size-guide-table th {
+  background: var(--purple);
+  color: var(--white);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+.size-guide-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.size-guide-table tr:nth-child(even) td {
+  background: #f9f4ff;
+}
+
+/* ---- SUBMIT ---- */
+.form-submit {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.submit-btn {
+  width: 100%;
+  max-width: 360px;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.privacy-note {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.75rem;
+}
+
+/* ---- SIDEBAR ---- */
+.rsvp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sidebar-card {
+  padding: 1.5rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  border-bottom: 2px solid var(--light);
+  padding-bottom: 0.5rem;
+}
+
+.summary-list,
+.bring-list {
+  list-style: none;
+  line-height: 2;
+  font-size: 0.9rem;
+}
+
+.summary-list li strong {
+  color: var(--purple);
+}
+
+/* ---- RSVP COUNTER ---- */
+.counter-card {
+  text-align: center;
+  background: linear-gradient(135deg, var(--dark), #2d1b4e);
+  color: var(--white);
+}
+
+.counter-card h3 {
+  color: var(--yellow) !important;
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+
+.rsvp-counter {
+  margin: 0.75rem 0;
+}
+
+.rsvp-counter span {
+  display: block;
+  font-family: 'Pacifico', cursive;
+  font-size: 3.5rem;
+  color: var(--yellow);
+  line-height: 1;
+}
+
+.rsvp-counter label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.counter-bar-wrap {
+  background: rgba(255,255,255,0.1);
+  border-radius: 50px;
+  height: 8px;
+  margin: 0.75rem 0;
+  overflow: hidden;
+}
+
+.counter-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--yellow), var(--orange));
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+.counter-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .rsvp-main {
+    grid-template-columns: 1fr;
+  }
+  .rsvp-sidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-card { padding: 1.5rem; }
+  .radio-group { flex-direction: column; }
+  .radio-card { min-width: unset; }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Tracker – Spears STL Reunion 2026</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Spears STL ♡</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rsvp.html">RSVP</a></li>
+      <li><a href="admin.html">Tracker</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="admin-header">
+    <div class="admin-header-content">
+      <p class="header-eyebrow">Reunion Planning</p>
+      <h1 class="header-title">Guest Tracker</h1>
+      <p class="header-sub">View all RSVPs, t-shirt orders, and attendance at a glance.</p>
+    </div>
+    <div class="admin-header-actions">
+      <button class="btn btn-secondary" id="exportCsvBtn">⬇️ Export CSV</button>
+      <button class="btn btn-primary" id="clearAllBtn">🗑️ Clear All Data</button>
+    </div>
+  </header>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-number" id="statTotal">0</span>
+      <label>Total Entries</label>
+    </div>
+    <div class="stat-card stat-yes">
+      <span class="stat-number" id="statYes">0</span>
+      <label>Attending ✅</label>
+    </div>
+    <div class="stat-card stat-maybe">
+      <span class="stat-number" id="statMaybe">0</span>
+      <label>Maybe 🤔</label>
+    </div>
+    <div class="stat-card stat-no">
+      <span class="stat-number" id="statNo">0</span>
+      <label>Can't Make It 😢</label>
+    </div>
+    <div class="stat-card stat-guests">
+      <span class="stat-number" id="statGuests">0</span>
+      <label>Total Guests</label>
+    </div>
+    <div class="stat-card stat-shirts">
+      <span class="stat-number" id="statShirts">0</span>
+      <label>T-Shirts Ordered</label>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+
+    <!-- CONTROLS ROW -->
+    <div class="controls-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by name, branch, or status…" />
+      </div>
+      <div class="filter-wrap">
+        <select id="filterAttending">
+          <option value="">All Statuses</option>
+          <option value="Yes">Attending</option>
+          <option value="Maybe">Maybe</option>
+          <option value="No">Can't Make It</option>
+        </select>
+        <select id="filterBranch">
+          <option value="">All Branches</option>
+          <option value="Branch A">Branch A</option>
+          <option value="Branch B">Branch B</option>
+          <option value="Branch C">Branch C</option>
+          <option value="Branch D">Branch D</option>
+          <option value="Branch E">Branch E</option>
+          <option value="Other / Not Sure">Other / Not Sure</option>
+        </select>
+        <select id="sortBy">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="name">Name A–Z</option>
+          <option value="branch">Branch</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- T-SHIRT SUMMARY -->
+    <div class="card tshirt-summary-card">
+      <h3 class="tshirt-summary-title">👕 T-Shirt Size Summary</h3>
+      <div class="tshirt-summary-grid" id="tshirtSummary">
+        <p class="no-data-text">No t-shirt orders yet.</p>
+      </div>
+    </div>
+
+    <!-- TABLE SECTION -->
+    <div class="table-wrap card">
+      <div class="table-header-row">
+        <h3>Guest List <span class="result-count" id="resultCount"></span></h3>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">📋</div>
+        <h3>No RSVPs Yet</h3>
+        <p>Once guests submit the RSVP form, their entries will appear here.</p>
+        <a href="rsvp.html" class="btn btn-primary mt-3">Go to RSVP Form</a>
+      </div>
+
+      <!-- Table -->
+      <div id="tableContainer" style="display:none;">
+        <div class="table-scroll">
+          <table id="guestTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Branch</th>
+                <th>Status</th>
+                <th>Guests</th>
+                <th>T-Shirts</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Notes</th>
+                <th>Submitted</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="guestTableBody">
+              <!-- Rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANCH BREAKDOWN -->
+    <div class="card branch-card">
+      <h3>🌳 Attendance by Branch</h3>
+      <div class="branch-grid" id="branchGrid">
+        <p class="no-data-text">No data yet.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- DELETE CONFIRM MODAL -->
+  <div class="modal-overlay" id="deleteModal" style="display:none;">
+    <div class="modal card">
+      <h3>Remove Guest?</h3>
+      <p>Are you sure you want to remove <strong id="deleteGuestName"></strong> from the list? This cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline-dark" id="cancelDelete">Cancel</button>
+        <button class="btn btn-primary" id="confirmDelete">Yes, Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLEAR ALL CONFIRM MODAL -->
+  <div class="modal-overlay" id="clearModal" style="display:none;">
+    <div class="modal card">
+      <h3>⚠️ Clear All Data?</h3>
+      <p>This will permanently delete <strong>all RSVP entries</strong>. This cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline-dark" id="cancelClear">Cancel</button>
+        <button class="btn btn-primary" id="confirmClear">Yes, Clear Everything</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div class="modal-overlay" id="editModal" style="display:none;">
+    <div class="modal card" style="max-width:500px;">
+      <h3>✏️ Edit Entry</h3>
+      <div class="form-group">
+        <label>Attendance Status</label>
+        <select id="editAttending">
+          <option value="Yes">Yes – Attending</option>
+          <option value="Maybe">Maybe</option>
+          <option value="No">Can't Make It</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Notes</label>
+        <textarea id="editNotes" rows="3"></textarea>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-outline-dark" id="cancelEdit">Cancel</button>
+        <button class="btn btn-green" id="confirmEdit">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Made with ❤️ for the <span>Spears Family</span> &bull; St. Louis, MO &bull; Sept. 5, 2026</p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
