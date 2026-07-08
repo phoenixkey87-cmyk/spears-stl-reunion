@@ -117,16 +117,8 @@
             <span class="field-error" id="err-attending"></span>
           </div>
 
-          <!-- Guest count -->
-          <div class="form-group">
-            <label for="guestCount">Number of Guests (including yourself) <span class="required-star">*</span></label>
-            <div class="number-input-wrap">
-              <button type="button" class="num-btn" id="decreaseGuests">−</button>
-              <input type="number" id="guestCount" name="guestCount" value="1" min="1" max="20" readonly />
-              <button type="button" class="num-btn" id="increaseGuests">+</button>
-            </div>
-            <span class="field-error" id="err-guestCount"></span>
-          </div>
+          <!-- Guest count (hidden, kept for form data) -->
+          <input type="hidden" id="guestCount" name="guestCount" value="1" />
 
           <!-- GUEST NAMES + T-SHIRT SECTION -->
           <div class="tshirt-section">
@@ -135,13 +127,17 @@
               <span class="tshirt-badge">Spears STL 2026</span>
             </h3>
             <p class="tshirt-note">
-              Each person needs a name, email, phone, and shirt size.
-              <strong>Person 1 is you</strong> — it auto-fills from above. Additional rows appear as you increase the guest count.
+              Enter details for every person in your group.
+              <strong>Person 1 is you</strong> — it auto-fills from above. Click the button below to add more guests.
             </p>
 
             <div id="guestRows">
               <!-- Dynamically generated per guest by rsvp.js -->
             </div>
+
+            <button type="button" class="btn-add-guest" id="addGuestBtn">
+              ＋ Add Another Guest
+            </button>
 
             <div class="size-guide">
               <button type="button" class="size-guide-toggle" id="sizeGuideToggle">📏 View Size Guide</button>

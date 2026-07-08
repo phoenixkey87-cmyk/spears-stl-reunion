@@ -405,6 +405,48 @@
   box-shadow: 0 2px 8px rgba(123,45,139,0.3);
 }
 
+/* ---- ADD GUEST BUTTON ---- */
+.btn-add-guest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0 1.25rem;
+  background: transparent;
+  border: 2px dashed var(--purple);
+  border-radius: 12px;
+  color: var(--purple);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-add-guest:hover {
+  background: rgba(123,45,139,0.08);
+  color: var(--purple);
+}
+
+/* ---- REMOVE GUEST BUTTON ---- */
+.btn-remove-guest {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  line-height: 1;
+  transition: color 0.15s;
+  margin-left: auto;
+}
+
+.btn-remove-guest:hover {
+  color: var(--red);
+}
+
 /* ---- SIZE GUIDE ---- */
 .size-guide {
   margin-top: 1rem;
