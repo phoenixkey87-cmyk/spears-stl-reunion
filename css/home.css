@@ -11,7 +11,7 @@
 .hero {
   position: relative;
   min-height: 92vh;
-  background: url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1400&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1400&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
